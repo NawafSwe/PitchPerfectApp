@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DAA-iX-mpI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Record Sounds View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="PitchPerfectApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-k3-xHy">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <state key="normal" image="Untitled design"/>
+                                <connections>
+                                    <action selector="startRecordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Hd-LD-kPy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvy-or-83I">
+                                <rect key="frame" x="152" y="506" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-JG-KJ5">
+                                <rect key="frame" x="157" y="549" width="100" height="100"/>
+                                <state key="normal" image="stop"/>
+                                <connections>
+                                    <action selector="stopRecordingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHC-dw-Fcp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="kqa-k3-xHy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6gv-zr-oI6"/>
+                            <constraint firstItem="yvy-or-83I" firstAttribute="top" secondItem="kqa-k3-xHy" secondAttribute="bottom" constant="8" id="DK0-ya-mso"/>
+                            <constraint firstItem="jeX-JG-KJ5" firstAttribute="centerX" secondItem="yvy-or-83I" secondAttribute="centerX" id="KZC-Jl-vAG"/>
+                            <constraint firstItem="yvy-or-83I" firstAttribute="centerX" secondItem="kqa-k3-xHy" secondAttribute="centerX" id="cag-f5-r7A"/>
+                            <constraint firstItem="kqa-k3-xHy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ofm-RJ-MRT"/>
+                            <constraint firstItem="jeX-JG-KJ5" firstAttribute="top" secondItem="yvy-or-83I" secondAttribute="bottom" constant="22" id="sqp-dr-iNL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aLb-eg-sEn"/>
+                    <connections>
+                        <outlet property="startRecordButton" destination="kqa-k3-xHy" id="cOf-R5-gM1"/>
+                        <outlet property="stopRecordButton" destination="jeX-JG-KJ5" id="Z9b-XI-H2g"/>
+                        <outlet property="tapRecordLabel" destination="yvy-or-83I" id="bxa-he-B83"/>
+                        <segue destination="j32-lI-4sc" kind="show" identifier="stopRecordingPressed" id="HWi-2Q-pxj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="111.83035714285714"/>
+        </scene>
+        <!--PlaySoundsViewController-->
+        <scene sceneID="OZA-84-yi8">
+            <objects>
+                <viewController id="j32-lI-4sc" userLabel="PlaySoundsViewController" customClass="PlaySoundsViewController" customModule="PitchPerfectApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngf-Fg-EvJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Psr-sp-veg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hOD-er-3KK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXf-SM-Jbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1yA-i6-VsK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DAA-iX-mpI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2kd-RD-y85">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HSN-js-4tr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaY-aj-BLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Untitled design" width="100" height="100"/>
+        <image name="stop" width="100" height="100"/>
+    </resources>
+</document>
