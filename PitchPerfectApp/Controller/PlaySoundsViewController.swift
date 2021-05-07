@@ -19,7 +19,6 @@ class PlaySoundsViewController: UIViewController , AVAudioRecorderDelegate  {
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
-    
     var recordedAudioURL : URL!
     var stopTimer: Timer!
     var audioFile:AVAudioFile!
@@ -40,7 +39,6 @@ class PlaySoundsViewController: UIViewController , AVAudioRecorderDelegate  {
         
     }
     
-    
     func fixButtonScale(){
         echoButton.imageView?.contentMode = .scaleAspectFit
         fastButton.imageView?.contentMode = .scaleAspectFit
@@ -56,8 +54,6 @@ class PlaySoundsViewController: UIViewController , AVAudioRecorderDelegate  {
     @IBAction func stopPlayingPressed(_ sender: UIButton) {
         stopAudio()
     }
-    
-  
     
     @IBAction func playSound(_ sender : UIButton){
         switch(ButtonType(rawValue: sender.tag)!){
@@ -235,20 +231,3 @@ class PlaySoundsViewController: UIViewController , AVAudioRecorderDelegate  {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
